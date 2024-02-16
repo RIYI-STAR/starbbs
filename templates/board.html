@@ -1,0 +1,39 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公告</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body style="background: #c9ba84;">
+<div class="container" style="margin: auto;height: 85%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;">
+    <div class="row">
+        <p class="text-center h1">公告</p>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="height: 95%;background-color: #ffffff;overflow: auto;">
+            {% for text in board_text %}
+                <div class="row">
+                     <li class="text-left h4">{{ text.message }}</li>
+                </div>
+            {% endfor %}
+            <div class="row">完成本页面的阅读后，点击“<a href="javascript: void(0)" onclick="back()">enter</a>”键退出本页面</div>
+        </div>
+    </div>
+</div>
+<script>
+    function back(){
+        if (confirm("我已阅读该公告，并知晓其内容")){
+          history.back()
+        }
+    }
+    window.onkeydown = function(d){
+      if (d.keyCode == 13){
+        back()
+      }
+    }
+</script>
+</body>
+</html>

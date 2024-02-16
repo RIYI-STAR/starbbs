@@ -1,0 +1,133 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='swiper/swiper-bundle.min.css') }}">
+
+    <style>
+        img {
+            height: auto;
+            width: 100%;
+        }
+        .swiper-slide img {
+            height: 100%;
+        }
+        .swiper-slide {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="background: #c9ba82;height: 220%;">
+        <div class="row text-center" style="background-color: cc6600"><h4>首页</h4></div>
+
+        <div class="row">
+            <div class="col-md-10 col-lg-10 col-xs-10 col-sm-10 col-md-push-1 col-lg-push-1 col-xs-push-1 col-sm-push-1" style="b;height: 16%;margin-top: 4%;">
+<!--                -->
+                 <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="https://mp.weixin.qq.com/s/sHcbyat_LkpJ2G4Z2Fzi8Q">
+                                <img src="{{ url_for('static', filename=box_url_list.boot.box_1) }}" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://mp.weixin.qq.com/s/BSh1S8xhJYsyhEM6zGnJ2A">
+                                <img src="{{ url_for('static', filename=box_url_list.boot.box_2) }}" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://mp.weixin.qq.com/s/hCXCxA4tKgWVnD9r0wMayg">
+                                <img src="{{ url_for('static', filename=box_url_list.boot.box_3) }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- 如果需要滚动条 -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+             <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+                 <div class="row">
+                     <div class="col-md-9 col-lg-9 col-xs-9 col-sm-9 col-md-push-3 col-lg-push-3 col-xs-push-3 col-sm-push-3" style=";height: 100vm;margin-top: 4%;">
+                        <img src="{{ url_for('static', filename=box_url_list.box_1) }}" alt="">
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+                 <div class="row">
+                     <div class="col-md-9 col-lg-9 col-xs-9 col-sm-9" style=";height: 100vm;margin-top: 4%;">
+                        <img src="{{ url_for('static', filename=box_url_list.box_2) }}" alt="">
+                     </div>
+                 </div>
+             </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-lg-10 col-xs-10 col-sm-10 col-md-push-1 col-lg-push-1 col-xs-push-1 col-sm-push-1" style="b;height: 100vm;margin-top: 4%;">
+                <img src="{{ url_for('static', filename=box_url_list.box_3) }}" alt="">
+            </div>
+        </div>
+
+        <div class="row navbar-fixed-bottom text-center" style="b;height: 5%;background-color: cc6600;font-size: 20px;font-family: 隶书;">
+            <a href="/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                首页
+            </div>
+            </a>
+            <a href="/conversation/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                公屏
+            </div>
+            </a>
+            <a href="/bbs/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                论坛
+            </div>
+            </a>
+            <a href="/mine/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                我的
+            </div>
+            </a>
+        </div>
+    </div>
+
+     <script src="{{ url_for('static', filename='swiper/swiper-bundle.min.js') }}"></script>
+     <script>
+          var mySwiper = new Swiper ('.swiper', {
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+        },
+
+        // 如果需要滚动条
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      })
+     </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body style="background: #c9ba84;">
+  <div class="row text-center" style="background-color: cc6600">
+      <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
+          <h4><a href="javascript: void(0)" class="text-left" style="text-align: left;color: #000000;" onclick="history.back()"><</a></h4>
+      </div>
+      <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 text-center"><h4>编辑页面</h4></div>
+  </div>
+  <div class="container-fluid" style="">
+      <div class="row" style="">
+          <form action="" method="post">
+              <div class="col-md-4 col-lg-4 col-xs-8 col-sm-8 col-md-push-4 col-lg-push-4 col-xs-push-2 col-sm-push-2" id="i" style="margin: auto;height: 55%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;background-color: #ffffff;">
+                <div class="row" style="height: 10%;">
+                    <div class="col-md-8 col-lg-8 col-xs-12 col-sm-8 col-md-push-2 col-lg-push-2 col-sm-push-2" style="margin-top: 20%;">
+                        {% if k == 'name' or k == 'introduction' or k == 'advice' %}
+                            <input type="text" name="value" required="" placeholder="请填写" style="width: 100%;height: 100%;">
+                        {% elif k =='birthday' %}
+                            <input type="date" name="value" style="width: 100%;height: 100%;">
+                        {% elif k == 'mw' %}
+                            <select name="value" style="width: 100%;height: 100%;">
+                                <option value="不展示"><--请选择您的性别--></option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-xs-12 col-sm-8 col-md-push-2 col-lg-push-2 col-sm-push-2" style="margin-top: 45%;">
+                        <input type="submit" style="width: 100%;height: 100%;background-color: #00CC66;">
+                    </div>
+
+                </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</body>
+</html>

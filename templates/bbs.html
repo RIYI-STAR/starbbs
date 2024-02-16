@@ -1,0 +1,42 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container-fluid" style="background: #c9ba82;height: 100%;">
+        <div class="row text-center" style="background-color: cc6600"><h4>首页</h4></div>
+        <div class="row text-center" style="font-size: 20px;">
+            暂未开放
+        </div>
+
+
+        <div class="row navbar-fixed-bottom text-center" style="b;height: 5%;background-color: cc6600;font-size: 20px;font-family: 隶书;">
+            <a href="/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                首页
+            </div>
+            </a>
+            <a href="/conversation/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                公屏
+            </div>
+            </a>
+            <a href="/bbs/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                论坛
+            </div>
+            </a>
+            <a href="/mine/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">
+                我的
+            </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

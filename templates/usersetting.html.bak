@@ -1,0 +1,48 @@
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>账号信息</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container-fluid" style="background: #c9ba82;height: 100%;">
+      <div class="row text-center" style="background-color: cc6600">
+            <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
+                <h4><a href="../mine/" class="text-left" style="text-align: left;color: #000000;"><</a></h4>
+            </div>
+            <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 text-center"><h4>账号信息</h4></div>
+      </div>
+
+        <hr>
+
+        <div class="row text-right" style="border: 1px solid;font-size: 20px;">
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 ">用户名</div>
+            <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 col-md-push-5 col-lg-push-5 col-sm-push-5 col-xs-push-5">
+                <p class="text-right">{{ information.user }}</p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('editor', k='password') }}" style="color: #000000;font-size: 20px;">
+            <div class="row text-right" style="border: 1px solid;">
+                <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">密码</div>
+                <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 col-md-push-5 col-lg-push-5 col-sm-push-5 col-xs-push-5">
+                    <p class="text-right">{{ information.password }}&nbsp&nbsp&nbsp&nbsp&nbsp></p>
+                </div>
+            </div>
+        </a>
+
+        <hr>
+
+        <a href="/logout/">
+            <div class="row" style="border: 1px solid;color: #000000;font-size: 20px;">
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-push-1 col-lg-push-1 col-sm-push-1 col-xs-push-1 text-right">
+                    退出登录
+                </div>
+                <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 col-md-push-6 col-lg-push-6 col-sm-push-6 col-xs-push-6">
+                    <p class="text-left">></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

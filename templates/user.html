@@ -1,0 +1,59 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ information.name }}的个人主页</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container-fluid" style="background: #c9ba82;height: 100%;">
+        <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
+          <h4><a href="/conversation/" class="text-left" style="text-align: left;color: #000000;"><</a></h4>
+        </div>
+        <div class="row text-center" style="background-color: cc6600"><h4>{{ information.name }}的个人主页</h4></div>
+
+        <div class="row" style="">
+            <div class="col-md-2 col-lg-2 col-xs-2 col-sm-2" style="width:210;height:190px;margin: 3%;">
+                <img src="{{ url_for('static', filename='./config/photos/user/'+ information.user +'.png') }}" alt="" style="width: 100%;height: 100%">
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-4 col-sm-4" style="margin-top: 6%;">
+                <p class="text-left h1" style="font-family: 宋体;">{{ information.name }}</p>
+            </div>
+            <div class="col-md-8 col-lg-9 col-xs-4 col-sm-7" style="height: 100px;margin-top: 3%;overflow: auto;">
+                <p>{{ information.introduction }}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row" style="border: 1px solid;font-size: 20px;">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">·生日</div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                {{ information.birthday }}
+            </div>
+        </div>
+        <div class="row" style="border: 1px solid;font-size: 20px;">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">·性别</div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                {{ information.mw }}
+            </div>
+        </div>
+        <div class="row navbar-fixed-bottom text-center" style="b;height: 5%;background-color: cc6600;font-size: 20px;font-family: 隶书;">
+            <a href="/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">首页</div>
+            </a>
+            <a href="/conversation/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">公屏</div>
+            </a>
+            <a href="/bbs/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">论坛</div>
+            </a>
+            <a href="/mine/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">我的</div>
+            </a>
+        </div>
+    </div>
+
+</body>

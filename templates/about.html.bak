@@ -1,0 +1,21 @@
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+  <div class="container-fluid text-center" style="background: #c9ba82;height: 100%;">
+      <div class="row text-center" style="background-color: cc6600">
+            <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
+                <h4><a href="../mine/" class="text-left" style="text-align: left;color: #000000;"><</a></h4>
+            </div>
+            <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 text-center"><h4>关于我们</h4></div>
+      </div>
+      <div class="row">作者:日羿</div>
+      <div class="row">微信:riyi0616</div>
+      <div class="row">QQ:2505599817</div>
+      <div class="row">合作加:starbot0513</div>
+  </div>
+</body>
+</html>

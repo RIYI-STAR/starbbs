@@ -1,0 +1,33 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>赞助</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+  <div class="container-fluid text-center" style="background: #c9ba82;height: 100%;">
+      <div class="row text-center" style="background-color: cc6600">
+            <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
+                <h4><a href="../mine/" class="text-left" style="text-align: left;color: #000000;"><</a></h4>
+            </div>
+            <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 text-center"><h4>关于我们</h4></div>
+      </div>
+      <div class="row">本网站由日羿独立开发</div>
+      <div class="row">制作不易，求打赏QWQ</div>
+      <div class="row text-center">
+        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 col-md-push-3 col-lg-push-3 col-sm-push-3 col-xs-push-3">
+          微信
+            <img src="{{ url_for('static', filename='images/freehelp/wechat.jpg') }}" alt="" style="width:300px;height: 500px;">
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 col-md-push-4 col-lg-push-4 col-sm-push-4 col-xs-push-4">
+            支付宝
+            <img src="{{ url_for('static', filename='images/freehelp/alipay.jpg') }}" alt="" style="width:300px;height: 500px;">
+
+        </div>
+      </div>
+  </div>
+</body>
+</html>

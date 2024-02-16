@@ -1,0 +1,62 @@
+﻿<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公屏聊天</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <script src="../static/js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+    </div>
+    <script>
+        $(function (){
+            setInterval(function (){
+                var news = '';
+                $.ajax({
+                    url: '',
+                    type: 'post',
+                    dataType: 'json',
+                    traditional: true,
+                    success: function (news_list) {
+                        for (var i=0;i<news_list.length;i++){
+                            news += '<div class="row">\n' +
+                                '<hr>\n' +
+                                '<div class="col-md-12col-lg-12col-xs-12col-sm-12">\n'+
+                                '<div class="row" style="">\n'+
+                                '<div class="col-md-2col-lg-2col-xs-2col-sm-2"style="width:55px;height:25px;">\n'+
+                                '<a href="javascript:void(0)" onclick="window.open()">'+
+                                '<img src="../static/config/photos/user/'+
+                                news_list[i].user +
+                                '.png" alt="" style="width:100%;height:100%;">'+
+                                '</a>\n'+
+                                '</div>\n'+
+                                '<div class="col-md-5col-lg-5col-xs-5col-sm-5">\n'+
+                                '<p>&nbsp'+
+                                news_list[i].name+
+                                '<small style="color:blue;"></small></p>\n'+
+                                '</div>\n'+
+                                '</div>\n'+
+                                '\n'+
+                                '<div class="row">\n'+
+                                '<div class="col-md-10col-lg-10col-xs-10col-sm-10col-md-push-1col-lg-push-1col-xs-push-1col-sm-push-1"style="white-space:normal;word-break:break-all;font-family:微软雅黑;display:inline-block;">\n'+
+                                '<p>'+
+                                news_list[i].connect+
+                                '</p>\n'+
+                                '</div>\n'+
+                                '</div>\n'+
+                                '</div>\n'+
+                                '</div>';
+                        }
+                        $(".container-fluid").html(news);
+                    }
+                });
+            });
+            
+            
+        })
+    </script>
+</body>
+</html>

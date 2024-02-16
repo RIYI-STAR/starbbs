@@ -1,0 +1,100 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body style="background: #c9ba82;">
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row text-center" style="background-color: cc6600"><h4>我的</h4></div>
+
+        <div class="row" style="">
+            <div class="col-md-2 col-lg-2 col-xs-2 col-sm-2" style="width:210;height:190px;margin: 3%;">
+                <a href="/information/">
+                    <img src="{{ url_for('static', filename='./config/photos/user/'+ information.user +'.png') }}" alt="" style="width: 100%;height: 100%">
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-4" style="margin-top: 6%;">
+                <p class="text-left h1" style="font-family: 宋体;">{{ information.name }}<small><a href="{{ url_for('editor', k='name') }}">修改</a></small></p>
+            </div>
+            <div class="col-md-8 col-lg-9 col-xs-12 col-sm-7" style="margin-top: 3%;">
+                <div style="height: 100px;overflow: auto;"><p>{{ information.introduction }}</p></div>
+                <a href="{{ url_for('editor', k='introduction') }}">修改</a>
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="col-md-3 col-lg-3 col-xs-12 col-sm-3" style="height: 40%;">
+            <div class="row">
+                <div class="col-md-10 col-lg-10 col-xs-10 col-sm-10 col-md-push-1 col-lg-push-1 col-xs-push-1 col-sm-push-1" style="border: 2px solid;height: 90%;margin-top: 5%;overflow: auto;">
+                    <p class="text-center h2">建议回复箱</p>
+                    <p class="text-center h6"><a href="/advices/">我要提议</a></p>
+                    <hr>
+                    {% for advices in advices_list %}
+                        {% if advices.answer != '' %}
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                    <p class="h4">建议：{{ advices.message }}</p>
+                                    <p>回复：{{ advices.answer }}</p>
+                                    <p class="text-right">处理人：{{ advices.worker }}</p>
+                                    <hr>
+                                </div>
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-xs-12 col-sm-9">
+
+            <div class="row"><a href="/usersetting/">
+                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="background: #cccac2;">
+                    <img src="{{ url_for('static', filename='images/mine/usersetting.png') }}" alt="" style="width: 30px;height: 30px">
+                    账号管理
+                </div>
+            </a></div><div class="row">
+            <a href="/about/" style="color: #000000;">
+                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="background: #ffffff;">
+                    <img src="{{ url_for('static', filename='images/mine/about.png') }}" alt="" style="width: 30px;height: 30px">
+                    关于我们
+                </div>
+            </a>
+        </div><div class="row">
+            <a href="/freehelp/">
+                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="background: #cccac2;">
+                    <img src="{{ url_for('static', filename='images/mine/freehelp.png') }}" alt="" style="width: 30px;height: 30px">
+                    友情赞助
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <a href="/advices/" style="color: #000000;">
+                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="background: #ffffff;">
+                    <img src="{{ url_for('static', filename='images/mine/advices.png') }}" alt="" style="width: 30px;height: 30px">
+                    我要提议
+                </div>
+            </a>
+        </div>
+        <hr>
+        <div class="row navbar-fixed-bottom text-center" style="b;height: 5%;background-color: cc6600;font-size: 20px;font-family: 隶书;">
+            <a href="/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">首页</div>
+            </a>
+            <a href="/conversation/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">公屏</div>
+            </a>
+            <a href="/bbs/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">论坛</div>
+            </a>
+            <a href="/mine/" style="color: black;">
+                <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3" style="height: 100%">我的</div>
+            </a>
+        </div>
+    </div>
+
+</body>

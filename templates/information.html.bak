@@ -1,0 +1,70 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container-fluid" style="background: #c9ba82;height: 100%;">
+        <div class="row text-center" style="background-color: cc6600">
+            <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
+                <h4><a href="../mine/" class="text-left" style="text-align: left;color: #000000;"><</a></h4>
+            </div>
+            <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 text-center"><h4>个人信息</h4></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-2">
+                <div class="row">
+                        <div class="col-md-2 col-lg-2 col-xs-2 col-sm-2">
+                        <img src="{{ url_for('static', filename='./config/photos/user/'+ information.user +'.png') }}" alt="" style="width: 190px;height: 190px;margin: 3%;">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <p style="width: 200%;margin-left: 3%;">更改头像<input type="file" value="更改头像" name="user-photos-get"></p>
+                            <input type="submit" style="margin-left: 3%;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row" style="border: 1px solid;font-size: 20px;">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">·昵称</div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                {{ information.name }}
+                <small><a href="{{ url_for('editor', k='name') }}">修改</a></small>
+            </div>
+        </div>
+
+        <div class="row" style="border: 1px solid;font-size: 20px;">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">·简介</div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                {{ information.introduction }}
+                <small><a href="{{ url_for('editor', k='introduction') }}">修改</a></small>
+            </div>
+        </div>
+
+        <div class="row" style="border: 1px solid;font-size: 20px;">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">·生日</div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                {{ information.birthday }}
+                <small><a href="{{ url_for('editor', k='birthday') }}">修改</a></small>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">·性别</div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                {{ information.mw }}
+                <small><a href="{{ url_for('editor', k='mw') }}">修改</a></small>
+            </div>
+        </div>
+
+        {% if error == True %}
+        <script>
+            alert('只支持png和jpg类型的文件')
+        </script>
+        {% endif %}
+    </div>
+</body>
+</html>
